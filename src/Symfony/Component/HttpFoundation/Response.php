@@ -785,7 +785,7 @@ class Response
      */
     public function setMaxAge(int $value): static
     {
-        $this->headers->addCacheControlDirective('max-age', $value);
+        $this->headers->addCacheControlDirective('max-age', (string) $value);
 
         return $this;
     }
@@ -801,7 +801,7 @@ class Response
      */
     public function setStaleIfError(int $value): static
     {
-        $this->headers->addCacheControlDirective('stale-if-error', $value);
+        $this->headers->addCacheControlDirective('stale-if-error', (string) $value);
 
         return $this;
     }
@@ -817,7 +817,7 @@ class Response
      */
     public function setStaleWhileRevalidate(int $value): static
     {
-        $this->headers->addCacheControlDirective('stale-while-revalidate', $value);
+        $this->headers->addCacheControlDirective('stale-while-revalidate', (string) $value);
 
         return $this;
     }
@@ -834,7 +834,7 @@ class Response
     public function setSharedMaxAge(int $value): static
     {
         $this->setPublic();
-        $this->headers->addCacheControlDirective('s-maxage', $value);
+        $this->headers->addCacheControlDirective('s-maxage', (string) $value);
 
         return $this;
     }
